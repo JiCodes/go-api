@@ -10,7 +10,6 @@ type LoginDetails struct {
 	Username  string
 }
 
-
 type CoinDetails struct {
 	Coins    int64
 	Username string

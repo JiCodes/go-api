@@ -3,7 +3,7 @@ package handlers
 import (
 	"github.com/go-chi/chi"
 	chimiddle "github.com/go-chi/chi/middleware"
-	"github.com/JiCodes/go-api/internal/handlers/middleware"
+	"github.com/JiCodes/go-api/internal/middleware"
 )
 
 func Handlers(r *chi.Mux) {
@@ -12,7 +12,7 @@ func Handlers(r *chi.Mux) {
 
 	r.Route("/account", func(router chi.Router) {
 		// middleware for /account route
-		router.Use(middleware.AuthMiddleware) 
+		router.Use(middleware.Authorization) 
 		
 		router.Get("/coins", GetCoinBalance)
 	})
